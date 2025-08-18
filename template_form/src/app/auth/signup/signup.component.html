@@ -1,0 +1,47 @@
+<h2>Signup Component</h2>
+
+<form #signup="ngForm" (ngSubmit)="onSubmit(signup)">
+
+    <!-- Nested Component -->
+    <app-user-details [(name)]="user.name"></app-user-details>
+
+    <div>
+        <label>Email:</label>
+        <input type="email" name="email" [(ngModel)]="user.email" required email #email="ngModel">
+
+        <div *ngIf="email.invalid && email.touched" style="color: red;">
+            <p>* Valid Email is required. </p>
+        </div>
+    </div>
+
+    <pre></pre>
+
+    <div>
+        <label>Password:</label>
+        <input type="password" name="password" [(ngModel)]="user.password" required minlength="6" #password="ngModel">
+
+        <div *ngIf="password.invalid && password.touched" style="color: red;">
+            <p>* Password (min 6 chars) is required. </p>
+        </div>
+    </div>
+
+    <pre></pre>
+
+    <div>
+        <label>Gender:</label>
+        <select name="gender" [(ngModel)]="user.gender" required #gender="ngModel">
+            <option value="" disabled>Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </div>
+
+    <!-- Validation error -->
+    <p *ngIf="gender.invalid && gender.touched" style="color:red;">
+        * Gender is required.
+    </p>
+
+    <pre></pre>
+    <button type="submit" [disabled]="signup.invalid">Register</button>
+
+</form>

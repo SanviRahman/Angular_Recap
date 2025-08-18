@@ -1,0 +1,72 @@
+<div class="constainer">
+    <h1>Reactive Form:</h1>
+    <form [formGroup]="func" (ngSubmit)="onDisplay()">
+
+        <!-- First Name -->
+        <div>
+            <label for="fname">First Name:</label>
+            <input type="text" formControlName="fname" placeholder="Enter your First Name">
+
+            <div *ngIf="fname?.invalid && fname?.touched" style="color: red;">
+                <p>*First Name is required. </p>
+            </div>
+        </div>
+
+        <pre></pre>
+
+        <!-- Last Name -->
+        <div>
+            <label for="lname">Last Name:</label>
+            <input type="text" formControlName="lname" placeholder="Enter your Last Name">
+
+            <div *ngIf="lname?.invalid && lname?.touched" style="color: red;">
+                <p>*Last Name is required. </p>
+            </div>
+        </div>
+
+        <pre></pre>
+
+
+        <!-- Password -->
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" formControlName="password" placeholder="Enter your Password">
+
+            <div *ngIf="password?.invalid && password?.touched" style="color: red;">
+                <p *ngIf="password?.errors?.['required']">*Password is required.</p>
+                <p *ngIf="password?.errors?.['minlength']">*Password must be at least 6 characters long.</p>
+            </div>
+        </div>
+
+        <pre></pre>
+
+        <!-- Email -->
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" formControlName="email" placeholder="Enter your Email">
+
+            <div *ngIf="email?.invalid && email?.touched" style="color: red;">
+                <p *ngIf="email?.errors?.['required']">*Email is required.</p>
+                <p *ngIf="email?.errors?.['email']">*Invalid email format.</p>
+            </div>
+        </div>
+
+
+        <pre></pre>
+
+        <!-- Selected -->
+        <div>
+            <label>Gender:</label>
+            <select formControlName="selected">
+                <option value="" disabled>Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            <div *ngIf="selected?.invalid && selected?.touched" class="error">
+                <p *ngIf="selected?.errors?.['required']" style="color: red;">* Please select an option.</p>
+            </div>
+        </div>
+        <pre></pre>
+        <button type="submit">Submit</button>
+    </form>
+</div>
