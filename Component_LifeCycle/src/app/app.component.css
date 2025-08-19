@@ -58,10 +58,10 @@ button:first-of-type:hover {
 
 /* Delete button */
 button:last-of-type {
-  background: #dc2626;
+  background: #1249e0;
   color: white;
 }
 
 button:last-of-type:hover {
-  background: #b91c1c;
+  background: #041f68;
 }
