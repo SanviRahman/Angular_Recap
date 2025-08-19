@@ -46,17 +46,8 @@ button {
   transition: 0.3s;
 }
 
-/* Save button */
-button:first-of-type {
-  background: #4f46e5;
-  color: white;
-}
 
-button:first-of-type:hover {
-  background: #3730a3;
-}
-
-/* Delete button */
+/* Button Hover */
 button:last-of-type {
   background: #1249e0;
   color: white;
