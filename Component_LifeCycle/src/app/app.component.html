@@ -1,0 +1,18 @@
+<form action="">
+  <div>
+    <label for="username">User Name:</label>
+    <input #input type="text" name="username" placeholder="Enter your Name">
+  </div>
+
+  <pre></pre>
+  <div>
+    <button type="button" (click)="onSubmit(input)">Save Data</button>
+  </div>
+
+  <pre></pre>
+  <div>
+    <button type="button" (click)="onDelete()"> Delete Data</button>
+  </div>
+</form>
+
+<app-comp1 [value]="inputText" *ngIf="destroy"></app-comp1>
