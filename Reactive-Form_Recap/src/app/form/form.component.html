@@ -1,0 +1,79 @@
+<h1>Reactive Form:</h1>
+
+<form [formGroup]="func" (submit)="onSubnit()">
+
+    <!-- First Name -->
+    <div>
+        <label for="fname">First Name:</label>
+        <input type="fname" formControlName="fname" placeholder="Enter your first name">
+
+        <div *ngIf="fname?.invalid && fname?.touched" style="color: red;">
+            <p>* First name is required.</p>
+        </div>
+    </div>
+
+
+
+
+    <pre></pre>
+
+    <!-- Last Name -->
+    <div>
+        <label for="lname">Last Name:</label>
+        <input type="lname" formControlName="lname" placeholder="Enter your last name">
+
+
+        <div *ngIf="lname?.invalid && lname?.touched" style="color: red;">
+            <p>* Last name is required.</p>
+        </div>
+    </div>
+
+
+    <pre></pre>
+
+    <!-- Email -->
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" formControlName="email" placeholder="Enter your email">
+
+        <div *ngIf="email?.invalid && email?.touched" style="color: red;">
+            <p *ngIf="email?.errors?.['required']"> * Email is required</p>
+            <p *ngIf="email?.errors?.['email']">* Invalid email</p>
+        </div>
+    </div>
+
+
+
+    <pre></pre>
+    <!-- Password -->
+
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" formControlName="password" placeholder="Enter your password">
+
+        <div *ngIf="password?.invalid && password?.touched" style="color: red;">
+            <p *ngIf="password?.errors?.['required']"> * Password is required.</p>
+            <p *ngIf="password?.errors?.['minlength']">* Password must be 6 chars.</p>
+        </div>
+    </div>
+
+
+    <pre></pre>
+    <!-- Selected -->
+    <div>
+        <label>Gender:</label>
+        <select formControlName="selected">
+            <option value="" disabled>Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <div *ngIf="selected?.invalid && selected?.touched">
+            <p *ngIf="selected?.errors?.['required']" style="color: red;">* Please select an option.</p>
+        </div>
+    </div>
+    <pre></pre>
+
+    <button type="submit">Submit</button>
+
+</form>
