@@ -1,0 +1,34 @@
+<div class="container">
+  <section class="card app-card">
+    <header class="app-header">
+      <div class="title-wrap">
+        <h1 class="title">Parent Component</h1>
+        <p class="subtitle">@ViewChild Demo Parent → Child Communication</p>
+      </div>
+
+      <div class="actions">
+        <button class="btn btn-primary" (click)="callChildMethod()">
+          Call Child Method
+        </button>
+        <button class="btn btn-accent" (click)="updateChildMessage()">
+          Update Child Message
+        </button>
+      </div>
+    </header>
+
+    <div class="divider"></div>
+
+    <app-child></app-child>
+  </section>
+</div>
+
+
+<!-- Popup Modal -->
+<div class="popup-overlay" *ngIf="showPopup">
+  <div class="popup-card">
+    <h2>Child Message</h2>
+    <p>{{ popupMessage }}</p>
+
+    <button class="btn btn-primary" (click)="closePopup()">Close</button>
+  </div>
+</div>

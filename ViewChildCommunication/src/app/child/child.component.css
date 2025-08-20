@@ -1,0 +1,42 @@
+:host { display: block; }
+
+.child-card {
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+}
+
+.child-title {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+.child-message {
+  margin: 0 0 14px 0;
+  color: #0f172a;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #eff6ff;
+  border: 1px dashed #bfdbfe;
+}
+
+/* Info line */
+.callout {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  color: var(--muted);
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+}
+.callout .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(34,197,94,.15);
+}

@@ -1,0 +1,137 @@
+:host {
+  display: block;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow);
+  padding: 28px;
+  backdrop-filter: saturate(120%) blur(4px);
+  animation: pop-in .4s ease-out;
+}
+
+/* App header */
+.app-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+}
+
+.title-wrap .title {
+  margin: 0 0 6px 0;
+  font-size: clamp(22px, 4vw, 30px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.title-wrap .subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.btn {
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  line-height: 1;
+  transition: transform .05s ease, box-shadow .2s ease, background-color .2s ease;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.08);
+  user-select: none;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--primary-600); }
+
+.btn-accent {
+  background: var(--accent);
+  color: #052e16;
+}
+.btn-accent:hover { filter: brightness(0.95); }
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+  margin: 18px 0 22px;
+}
+
+/* Keyframes */
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(6px) scale(.99); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 720px){
+  .app-header {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .actions { justify-content: flex-start; }
+}
+
+/* তোমার আগের CSS ঠিক রাখো, শুধু নিচে popup এর জন্য যোগ করো */
+
+/* Popup overlay */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: fadeIn .3s ease-out;
+}
+
+/* Popup box */
+.popup-card {
+  background: #fff;
+  padding: 32px;
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 20px 50px rgba(0,0,0,.25);
+  text-align: center;
+  width: min(90%, 480px);
+  animation: scaleIn .25s ease-out;
+}
+
+.popup-card h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: var(--primary);
+}
+
+.popup-card p {
+  margin: 16px 0 24px;
+  font-size: 18px;
+  color: var(--text);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { transform: scale(.9); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+
