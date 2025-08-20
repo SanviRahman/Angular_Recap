@@ -1,0 +1,28 @@
+<!-- <h2>Parent Component</h2>
+
+
+<input type="text" [(ngModel)]="parentMessage" placeholder="Type message to child">
+
+
+<button (click)="sendMessageToChild()">Send Message to Child</button>
+
+
+<p>Message from Child: {{ messageFromChild }}</p>
+
+
+<app-child 
+  [childMessage]="parentMessage" 
+  (sendToParent)="updateFromChild($event)">
+</app-child> -->
+
+<h2>Parent Component</h2>
+
+<!-- Input in parent -->
+<input type="text" [(ngModel)]="sharedMessage" placeholder="Type in Parent">
+
+<!-- Show what child sends -->
+<p>Message in Parent (from child): {{ sharedMessage }}</p>
+
+<!-- Child component with two-way binding -->
+<app-child [(childMessage)]="sharedMessage"></app-child>
+
