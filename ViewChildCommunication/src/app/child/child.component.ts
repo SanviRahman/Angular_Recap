@@ -8,10 +8,7 @@ import { Component } from '@angular/core';
 export class ChildComponent {
   message:string="Hello From Child Component!";
 
-  sayHello(){
-    alert("Child Component Say : Hello Parent!");
-  }
-
+ 
   changeMessage(newMsg:string){
     this.message=newMsg;
   }
