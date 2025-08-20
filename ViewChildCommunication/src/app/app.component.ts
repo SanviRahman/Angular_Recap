@@ -9,17 +9,17 @@ import { ChildComponent } from './child/child.component';
 export class AppComponent {
   @ViewChild(ChildComponent) child !: ChildComponent;
 
-  showPopup: boolean = false;   // popup control flag
-  popupMessage: string = "";    // popup message
+  showPopup: boolean = false;   
+  popupMessage: string = "";  
 
   ngAfterViewInit() {
     console.log(this.child.message);
   }
 
   callChildMethod() {
-    // child এর method ব্যবহার না করে custom popup show করবো
+
     this.popupMessage = this.child.message;
-    this.showPopup = true; // popup খুলে দাও
+    this.showPopup = true;
   }
 
   updateChildMessage() {
@@ -27,6 +27,6 @@ export class AppComponent {
   }
 
   closePopup() {
-    this.showPopup = false; // popup বন্ধ করো
+    this.showPopup = false;
   }
 }
