@@ -1,0 +1,67 @@
+<h1>Template Driven Form:</h1>
+
+<form #formSubmit="ngForm" (ngSubmit)="onSubmit(formSubmit)">
+
+    <!-- Nested Component -->
+    <app-child [(name)]="user.name"></app-child>
+
+    <!-- Name -->
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" [(ngModel)]="user.name" required placeholder="Enter your name." #name="ngModel">
+
+        <div *ngIf="name?.invalid && name?.touched" style="color: red;">
+            <p>* Name is required </p>
+        </div>
+    </div>
+
+    <pre></pre>
+
+
+    <!-- Email -->
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" [(ngModel)]="user.email" required email placeholder="Enter your email."
+            #email="ngModel">
+
+        <div *ngIf="email?.invalid && email?.touched" style="color: red;">
+            <p *ngIf="email?.errors?.['required']"> * Email is required</p>
+            <p *ngIf="email?.errors?.['email']"> * Invalid email</p>
+        </div>
+    </div>
+
+    <pre></pre>
+
+    <!-- Password -->
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" [(ngModel)]="user.password" required minlength="6"
+            placeholder="Enter your password." #password="ngModel">
+
+        <div *ngIf="password?.invalid && password?.touched" style="color: red;">
+            <p *ngIf="password?.errors?.['required']"> * Password is required</p>
+            <p *ngIf="password?.errors?.['minlength']"> * Min length 6 chars</p>
+        </div>
+    </div>
+
+    <pre></pre>
+
+    <!-- Select Gender -->
+    <div>
+        <label>Gender:</label>
+        <select name="gender" [(ngModel)]="user.gender" required #gender="ngModel">
+            <option value="" disabled>Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <p *ngIf="gender.invalid && gender.touched" style="color:red;">
+            * Gender is required.
+        </p>
+    </div>
+
+    <!-- Button -->
+    <pre></pre>
+    <button type="submit">Register</button>
+
+</form>
