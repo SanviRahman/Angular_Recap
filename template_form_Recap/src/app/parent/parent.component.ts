@@ -8,22 +8,35 @@ import { NgForm } from '@angular/forms';
 })
 export class ParentComponent {
 
-  user={
+  user = {
     name: "",
-    email:"",
-    password:"",
-    gender:"",
+    email: "",
+    password: "",
+    gender: "",
   }
 
-  onSubmit(form:NgForm){
-    if(form.valid){
-      alert("Form Submit Sucessful");
+  showModal = false;       
+  modalMessage = "";       
+  isSuccess = false;     
+
+  onSubmit(form: NgForm) {
+    if (form.valid) {
+      this.isSuccess = true;
+      this.modalMessage = "Form Submit Successful!";
+      this.showModal = true;
       console.log(form.value);
     }
-    else{
+    else {
+      this.isSuccess = false;
+      this.modalMessage = "Invalid Form. Please fill all required fields.";
+      this.showModal = true;
       console.log("Form is Invalid");
-      alert("Invalid Form");
     }
   }
+
+  closeModal() {
+    this.showModal = false;
+  }
+
 
 }

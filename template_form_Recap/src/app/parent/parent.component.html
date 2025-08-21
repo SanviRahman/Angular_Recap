@@ -65,3 +65,12 @@
     <button type="submit">Register</button>
 
 </form>
+
+
+<!-- Custom Modal -->
+<div class="modal-overlay" *ngIf="showModal">
+  <div class="modal-box" [ngClass]="{'success': isSuccess, 'error': !isSuccess}">
+    <h2>{{ modalMessage }}</h2>
+    <button (click)="closeModal()">Close</button>
+  </div>
+</div>
