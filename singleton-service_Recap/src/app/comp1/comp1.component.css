@@ -1,0 +1,56 @@
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f0f0;
+}
+
+.calc {
+  width: 90%;
+  max-width: 550px;            /* বড় স্ক্রিনে খুব বেশি চওড়া না হয় এজন্য */
+  padding: 20px;
+  background-color: beige;
+  border-radius: 10px;
+  font-family: sans-serif;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* একটু shadow দিলে ভালো দেখাবে */
+}
+
+.calc h3 {
+  text-align: center;
+  font-size: 25px;
+}
+
+.calc input {
+  width: 100%;                 /* 90% এর বদলে full width দিন */
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 20px;
+  box-sizing: border-box;      /* padding width এর ভেতরে গণনা হবে */
+}
+
+.btns {
+  text-align: center;          /* button গুলো center */
+  margin: 10px 0;
+}
+
+.btns button {
+  padding: 10px 32px;
+  border-radius: 5px;
+  border: none;
+  background-color: green;
+  color: white;
+  margin: 10px 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.result {
+  text-align: center;
+  margin: 20px 0;
+  background-color: rgb(200, 210, 206);
+  padding: 10px;
+  width: 96%;                /* full width নিন */
+  height: 20px;
+  border-radius: 5px;
+}
